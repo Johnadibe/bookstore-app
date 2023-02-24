@@ -21,9 +21,9 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 Math Magician <a name="about-project"></a>
+# 📖 Bookstore App <a name="about-project"></a>
 
-**math magician** Math-Magician" is a web app for all lovers of mathematics. It is a Single Page Application (SPA) that allows users to make simple calculations and read a random math-related quote.
+**bookstore app** The Bookstore is a website where the user can display a list of books, add a book by providing a title, an author, and selecting from the categories, and remove a selected book.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -39,9 +39,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Develop a React component that will hold the core functionality: a calculator.]**
-- **[Add the logic needed to make the Calculator component you developed in the previous project actually work.]**
-- **[Refactor the Calculator component using Hooks]**
+- **[Display a list of books.]**
+- **[Add a book.]**
+- **[Remove a selected book.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -65,7 +65,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone git@github.com:Johnadibe/math-magician.git
+  git clone git@github.com:Johnadibe/bookstore-app.git
 ```
 
 ### Install
@@ -73,7 +73,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd math-magician
+  cd bookstore-app
   yarn install
 ```
 
@@ -107,9 +107,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Develop a React component that will hold the core functionality: a calculator.]**
-- [ ] **[Add the logic needed to make the Calculator component you developed in the previous project actually work.]**
-- [ ] **[Refactor the Calculator component using Hooks]**
+- [ ] **[Display a list of books.]**
+- [ ] **[Add a book.]**
+- [ ] **[Remove a selected book.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
