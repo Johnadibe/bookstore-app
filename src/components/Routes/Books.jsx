@@ -11,8 +11,8 @@ function Books() {
     },
     {
       id: 2,
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
+      title: 'Dune',
+      author: 'Frank Herbert',
     },
   ]);
   return (
