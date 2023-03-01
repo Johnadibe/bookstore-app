@@ -8,9 +8,11 @@ export const categorySlice = createSlice({
   name: 'categories',
   initialState,
   reducers: {
-    checkStatus: () => ({
-      categories: 'Under Construction',
-    }),
+    checkStatus: (state, action) => {
+      state.categories = action.payload === 'Under construction' // eslint-disable-line no-param-reassign
+        ? 'Under construction'
+        : state.categories;
+    },
   },
 });
 
