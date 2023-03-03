@@ -1,41 +1,77 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuidv4 } from 'uuid';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const initialState = {
-  books: [
-    {
-      item_id: uuidv4(),
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
+const API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/aAIHCNfRPNuALA0JXOrN/books';
+
+export const getBooks = createAsyncThunk('books/getBooks', async () => {
+  try {
+    const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/aAIHCNfRPNuALA0JXOrN/books');
+    return response.json();
+  } catch (error) {
+    return error.message;
+  }
+});
+
+const addBooksToAPI = async (book) => {
+  await fetch(API, {
+    method: 'POST',
+    body: JSON.stringify(book),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
     },
-    {
-      item_id: uuidv4(),
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: uuidv4(),
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  });
 };
 
+const removeBooksFromAPI = async (id) => {
+  await fetch(`${API}/${id}`, {
+    method: 'DELETE',
+  });
+};
+
+const initialState = {
+  books: [],
+  status: 'ídle',
+  isError: null,
+};
+
+/* eslint-disable no-param-reassign */
 export const bookSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {
     addBook(state, action) {
       state.books.push(action.payload);
+      addBooksToAPI(action.payload);
     },
     removeBook(state, action) {
-      state.books = state.books.filter( // eslint-disable-line no-param-reassign
+      state.books = state.books.filter(
         (book) => book.item_id !== action.payload,
       );
+      removeBooksFromAPI(action.payload);
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(getBooks.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getBooks.fulfilled, (state, action) => {
+        const newArr = [];
+        Object.keys(action.payload).forEach((id) => {
+          const bookOBj = {
+            item_id: id,
+            title: action.payload[id][0].title,
+            category: '',
+            author: action.payload[id][0].author,
+          };
+          newArr.push(bookOBj);
+        });
+        state.books = [...newArr];
+        newArr.status = 'succeeded';
+      })
+      .addCase(getBooks.rejected, (state) => {
+        state.status = 'failed';
+        state.books = [];
+      });
   },
 });
 

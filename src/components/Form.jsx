@@ -6,6 +6,7 @@ import { addBook } from '../redux/books/booksSlice';
 function Form() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
 
@@ -16,10 +17,12 @@ function Form() {
       item_id: uuidv4(),
       title,
       author,
+      category,
     };
     dispatch(addBook(book));
     setTitle('');
     setAuthor('');
+    setCategory('');
   };
 
   return (
