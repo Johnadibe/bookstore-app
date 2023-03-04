@@ -1,37 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
-}
-
-.logo__link {
-  font-size: 1.875rem;
-}
-
-span {
-  margin-left: 10px;
-}
-
-.nav ul {
-  list-style: none;
-  display: flex;
-  gap: 50px;
-  font-size: 0.813rem;
-}
-
-.nav a {
-  color: inherit;
+  border: none;
+  outline: none;
   text-decoration: none;
-  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fafafa;
+  width: 100%;
+  font-family: 'Monteserrat', sans-serif;
+}
+
+.App {
+  width: 100%;
+  position: relative;
+}
+
+/* CATEGORY ROUTE STYLING */
+
+.categories {
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
   align-items: center;
-  padding: 15px;
+  height: 60vh;
+}
+
+.categories button {
+  border: none;
+  background: #0290ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2rem;
+  width: 25rem;
+  height: 7rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.categories h4 {
+  font-size: 4rem;
 }

@@ -16,13 +16,13 @@ function Books() {
 
   return (
     <div className="booklists">
-      <h1>Lists of Books</h1>
       {booksArr.map((book) => (
         <Book
           key={book.item_id}
           id={book.item_id}
           title={book.title}
           author={book.author}
+          category={book.category}
         />
       ))}
       <Form />

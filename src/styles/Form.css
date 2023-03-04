@@ -1,0 +1,42 @@
+.add-book {
+  color: #918f8f;
+  padding: 2rem 10%;
+}
+
+h3 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+form input {
+  font-size: 1.8rem;
+  padding: 10px;
+  border: 2px solid #918f8f;
+  border-radius: 1rem;
+  margin-left: 10px;
+  width: 25%;
+  height: 5rem;
+}
+
+.categories_select {
+  font-size: 1.8rem;
+  padding: 10px;
+  border: 2px solid #918f8f;
+  border-radius: 1rem;
+  margin-left: 10px;
+  width: 25%;
+  height: 5rem;
+}
+
+.btn-add {
+  border: none;
+  background: #0290ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  width: 18%;
+  height: 5rem;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 1rem;
+}

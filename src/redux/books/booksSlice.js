@@ -4,7 +4,7 @@ const API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstor
 
 export const getBooks = createAsyncThunk('books/getBooks', async () => {
   try {
-    const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/aAIHCNfRPNuALA0JXOrN/books');
+    const response = await fetch(API);
     return response.json();
   } catch (error) {
     return error.message;
